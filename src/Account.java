@@ -59,7 +59,7 @@ public class Account {
                 + amount
                 + " to account: "
                 + this.name
-                + " total balance is now: "
+                + ", total balance is now: "
                 + this.getBalance());
     }
 
@@ -74,7 +74,7 @@ public class Account {
                 + amount
                 + " from account: "
                 + this.name
-                + " total balance is now: "
+                + ", total balance is now: "
                 + this.getBalance());
     }
 }
