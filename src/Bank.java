@@ -3,9 +3,7 @@ import java.util.ArrayList;
 public class Bank {
     static ArrayList<Account> accounts = new ArrayList<Account>();
 
-    private Bank() {
-
-    }
+    private Bank() {}
 
     static void openAccount(String name) {
         accounts.add(new Account(name));
