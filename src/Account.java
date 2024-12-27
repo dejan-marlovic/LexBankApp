@@ -34,7 +34,7 @@ public class Account {
 
     /**
      *
-     * @return returns current account balance
+     * @return balance returns current account balance
      */
     public double getBalance() {
         return balance;
