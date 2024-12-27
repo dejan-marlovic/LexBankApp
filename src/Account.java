@@ -57,7 +57,7 @@ public class Account {
         System.out.println("--------------------------------------------------------------------------------------------");
         System.out.println("You have deposited: "
                 + amount
-                + " to account "
+                + " to account: "
                 + this.name
                 + " total balance is now: "
                 + this.getBalance());
@@ -72,7 +72,7 @@ public class Account {
         System.out.println("--------------------------------------------------------------------------------------------");
         System.out.println("You just made a withdrawal of "
                 + amount
-                + " from account "
+                + " from account: "
                 + this.name
                 + " total balance is now: "
                 + this.getBalance());
