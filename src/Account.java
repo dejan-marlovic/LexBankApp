@@ -19,7 +19,7 @@ public class Account {
     private double balance;
 
     /**
-     * @return returns account name
+     * @return name, returns account name
      */
     public String getName() {
         return name;
