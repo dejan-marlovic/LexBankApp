@@ -5,8 +5,15 @@ public class Account {
     /**
      * @param name Description: Each account object needs a name
      */
-    public Account(String name) {
-        this.name = name;
+    public Account(String name, long accNo) {
+        setName(name);
+        accountNumber = accNo;
+    }
+
+    private final long accountNumber;
+
+    public long getAccountNumber(){
+        return accountNumber;
     }
 
     /**
@@ -40,13 +47,6 @@ public class Account {
         return balance;
     }
 
-    /**
-     *
-     * @param balance sets current account balance
-     */
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
 
     /**
      *
