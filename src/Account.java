@@ -54,13 +54,7 @@ public class Account {
      */
     public void deposit(double amount) {
         balance += amount;
-        System.out.println("--------------------------------------------------------------------------------------------");
-        System.out.println("You have deposited: "
-                + amount
-                + " to account: "
-                + this.name
-                + ", total balance is now: "
-                + this.getBalance());
+        messageOutput("Deposit has been made to account: ",amount);
     }
 
     /**
@@ -69,12 +63,20 @@ public class Account {
      */
     public void withdrawal(double amount) {
         balance -= amount;
-        System.out.println("--------------------------------------------------------------------------------------------");
-        System.out.println("You just made a withdrawal of "
+        messageOutput("Withdrawal has been made from account: ",  amount);
+    }
+
+    public void messageOutput(String message, double amount){
+        System.out.println("---------------------------------------------------------------------------------------------------------");
+        System.out.println( message
+                + this.accountNumber + ", "
+                + this.getName() + ","
+                + " Amount: "
                 + amount
-                + " from account: "
-                + this.name
                 + ", total balance is now: "
                 + this.getBalance());
     }
+
 }
+
+

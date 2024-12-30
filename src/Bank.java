@@ -8,14 +8,14 @@ public class Bank {
     static Long openAccount(String name) {
         Long account = generateAccountNumber();
         accounts.put(account, new Account(name, account));
-        System.out.println("--------------------------------------------------------------------------------------------");
+        System.out.println("---------------------------------------------------------------------------------------------------------");
         System.out.println("You have opened an account under name: " + name);
         return accountCounter;
     }
 
     static void printAccountInfo() {
         for (Account account : accounts.values()) {
-            System.out.println("--------------------------------------------------------------------------------------------");
+            System.out.println("---------------------------------------------------------------------------------------------------------");
             System.out.println("Account: " + account.getName() + " has a balance of: " + account.getBalance());
         }
     }
@@ -31,10 +31,7 @@ public class Bank {
     static void accountTransfer( Long fromAcc, Long toAcc, double amount ){
         accounts.get(fromAcc).withdrawal(amount);
         accounts.get(toAcc).deposit(amount);
-        System.out.println("--------------------------------------------------------------------------------------------");
-        System.out.println("A withdrawal has been made from account: "
-                + getAccount(fromAcc).getName()
-                + " "
-                + " to account: " + getAccount(toAcc).getName() + " in amount of "+ amount);
+        System.out.println("---------------------------------------------------------------------------------------------------------");
+        System.out.println("Transaction complete!!!");
     }
 }
