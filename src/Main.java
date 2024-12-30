@@ -1,10 +1,14 @@
 public class Main {
     public static void main(String[] args) {
-       long account1 = Bank.openAccount("Dejan Marlovic");
-       long account2 = Bank.openAccount("Nils Jacobsen");
-        Bank.accounts.get(account1).deposit(3999);
-        Bank.accounts.get(account1).deposit(5533);
-        Bank.accounts.get(account2).withdrawal(3000);
+       Long account1 = Bank.openAccount("Dejan Marlovic");
+       Long account2 = Bank.openAccount("Nils Jacobsen");
+       System.out.println(Bank.accounts);
+       System.out.println(account2);
+       System.out.println(account1);
+        Bank.getAccount(account1).deposit(3000);
+        Bank.getAccount(account2).deposit(5533);
+
+        Bank.accountTransfer(account1,account2, 2000.45);
 
         Bank.printAccountInfo();
 
