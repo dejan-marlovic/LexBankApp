@@ -12,7 +12,7 @@ public class Account {
 
     private final long accountNumber;
 
-    public long getAccountNumber(){
+    public long getAccountNumber() {
         return accountNumber;
     }
 
@@ -40,7 +40,6 @@ public class Account {
     }
 
     /**
-     *
      * @return balance returns current account balance
      */
     public double getBalance() {
@@ -49,26 +48,24 @@ public class Account {
 
 
     /**
-     *
      * @param amount adds this amount to total account balance
      */
     public void deposit(double amount) {
         balance += amount;
-        messageOutput("Deposit has been made to account: ",amount);
+        messageOutput("Deposit has been made to account: ", amount);
     }
 
     /**
-     *
      * @param amount removes this amount from total account balance
      */
     public void withdrawal(double amount) {
         balance -= amount;
-        messageOutput("Withdrawal has been made from account: ",  amount);
+        messageOutput("Withdrawal has been made from account: ", amount);
     }
 
-    public void messageOutput(String message, double amount){
-        System.out.println("---------------------------------------------------------------------------------------------------------");
-        System.out.println( message
+    public void messageOutput(String message, double amount) {
+        printRowDelimiterLine();
+        System.out.println(message
                 + this.accountNumber + ", "
                 + this.getName() + ","
                 + " Amount: "
@@ -77,6 +74,9 @@ public class Account {
                 + this.getBalance());
     }
 
+    public void printRowDelimiterLine() {
+        System.out.println("---------------------------------------------------------------------------------------------------------");
+    }
 }
 
 
