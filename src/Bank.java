@@ -33,10 +33,16 @@ public class Bank {
     static void accountTransfer(Long fromAcc, Long toAcc, double amount) {
         printRowDelimiterLine();
         System.out.println("Starting transaction between accounts!");
-        accounts.get(fromAcc).withdrawal(amount);
-        accounts.get(toAcc).deposit(amount);
+        try {
+            accounts.get(fromAcc).withdrawal(amount);
+            accounts.get(toAcc).deposit(amount);
+            System.out.println("Transaction completed successfully!");
+
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            printRowDelimiterLine();
+        }
         printRowDelimiterLine();
-        System.out.println("Transaction completed successfully!");
     }
 
     static void printRowDelimiterLine() {

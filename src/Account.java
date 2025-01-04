@@ -77,8 +77,9 @@ public class Account {
         }
         if (balance - amount < 0)
         {
-            throw new IllegalArgumentException("Can not withdrawal amount: "
-                                                + amount +" from account. Insufficient funds!");
+            throw new IllegalArgumentException("Can not withdraw amount: "
+                                                + amount +" from account: " + this.getName() +
+                                                ". Insufficient funds!");
         }
         balance -= amount;
         messageOutput("Withdrawal has been made from account: ", amount);
