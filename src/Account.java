@@ -6,6 +6,16 @@ public class Account {
      * @param name Description: Each account object needs a name
      */
     public Account(String name, long accNo) {
+        if (name.matches(".*\\d.*")){
+            throw new IllegalArgumentException("Name can not contain numbers!");
+        }
+        if(name.length() <= 2){
+           throw new IllegalArgumentException("Name has to be longer than 2 characters!");
+        }
+        if (name.matches("^-.*|.*-$")) {
+            throw new IllegalArgumentException("Name can not start or end with a hyphen!");
+        }
+
         setName(name);
         accountNumber = accNo;
     }
@@ -51,6 +61,9 @@ public class Account {
      * @param amount adds this amount to total account balance
      */
     public void deposit(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Deposit amount can not be negative!");
+        }
         balance += amount;
         messageOutput("Deposit has been made to account: ", amount);
     }
@@ -59,6 +72,14 @@ public class Account {
      * @param amount removes this amount from total account balance
      */
     public void withdrawal(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Withdrawal amount can not be negative!");
+        }
+        if (balance - amount < 0)
+        {
+            throw new IllegalArgumentException("Can not withdrawal amount: "
+                                                + amount +" from account. Insufficient funds!");
+        }
         balance -= amount;
         messageOutput("Withdrawal has been made from account: ", amount);
     }
