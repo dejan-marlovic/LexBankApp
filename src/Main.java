@@ -1,4 +1,4 @@
-import java.util.function.DoubleToIntFunction;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -7,12 +7,11 @@ public class Main {
 
         try {
             Bank.getAccount(account1).deposit(5000);
-        }catch (IllegalArgumentException e)
-        {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
 
-            Bank.getAccount(account2).deposit(5533);
+        Bank.getAccount(account2).deposit(5533);
 
         Bank.accountTransfer(account1, account2, -10);
 
