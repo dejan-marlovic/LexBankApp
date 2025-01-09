@@ -1,31 +1,11 @@
 /**
  * This class represents a bank account
  */
-public class Account {
-    /**
-     * @param name Description: Each account object needs a name
-     */
-    public Account(String name, long accNo) {
-        if (name.matches(".*\\d.*")){
-            throw new IllegalArgumentException("Name can not contain numbers!");
-        }
-        if(name.length() <= 2){
-           throw new IllegalArgumentException("Name has to be longer than 2 characters!");
-        }
-        if (name.matches("^-.*|.*-$")) {
-            throw new IllegalArgumentException("Name can not start or end with a hyphen!");
-        }
 
-        setName(name);
-        accountNumber = accNo;
-    }
+
+public class Account {
 
     private final long accountNumber;
-
-    public long getAccountNumber() {
-        return accountNumber;
-    }
-
     /**
      * Stores account name
      */
@@ -43,7 +23,8 @@ public class Account {
     }
 
     /**
-     * Sets account name
+     *
+     * @param name sets parameter name to account name
      */
     public void setName(String name) {
         this.name = name;
@@ -55,6 +36,30 @@ public class Account {
     public double getBalance() {
         return balance;
     }
+
+    /**
+     *
+     * @param name Each new Account object needs a name of type string.
+     * @param accNo Each new Account needs unique account number of type long. Account number assignment
+     *              and Account creation is expected to be handled by external Bank class
+     */
+    public Account(String name, long accNo) {
+        if (name.matches(".*\\d.*")){
+            throw new IllegalArgumentException("Name can not contain numbers!");
+        }
+        if(name.length() <= 2){
+           throw new IllegalArgumentException("Name has to be longer than 2 characters!");
+        }
+        if (name.matches("^-.*|.*-$")) {
+            throw new IllegalArgumentException("Name can not start or end with a hyphen!");
+        }
+
+        setName(name);
+        accountNumber = accNo;
+    }
+
+
+
 
 
     /**
@@ -69,7 +74,7 @@ public class Account {
     }
 
     /**
-     * @param amount removes this amount from total account balance
+     * @param amount subtracts this amount from total account balance
      */
     public void withdrawal(double amount) {
         if (amount <= 0) {
@@ -85,6 +90,12 @@ public class Account {
         messageOutput("Withdrawal has been made from account: ", amount);
     }
 
+
+    /**
+     *
+     * @param message message to be printed before amount is shown.
+     * @param amount to be shown after each message
+     */
     public void messageOutput(String message, double amount) {
         printRowDelimiterLine();
         System.out.println(message
