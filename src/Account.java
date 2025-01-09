@@ -39,7 +39,7 @@ public class Account {
 
     /**
      *
-     * @param name Each new Account object needs a name of type string.
+     * @param name Each new Account object needs a name of type String.
      * @param accNo Each new Account needs unique account number of type long. Account number assignment
      *              and Account creation is expected to be handled by external Bank class
      */

@@ -6,14 +6,14 @@ public class Main {
         Long account2 = Bank.openAccount("Nils Jacobsen");
 
         try {
-            Bank.getAccount(account1).deposit(5000);
+            Bank.getAccount(account1).deposit(1000);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
 
-        Bank.getAccount(account2).deposit(5533);
+        Bank.getAccount(account2).deposit(1000);
 
-        Bank.accountTransfer(account1, account2, 67810);
+        Bank.accountTransfer(account1, account2, 100);
 
         Bank.printAccountInfo();
 

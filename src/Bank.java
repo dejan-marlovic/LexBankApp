@@ -68,8 +68,16 @@ public class Bank {
         printRowDelimiterLine();
         System.out.println("Starting transaction between accounts!");
         try {
-            accounts.get(fromAcc).withdrawal(amount);
-            accounts.get(toAcc).deposit(amount);
+            Bank.getAccount(fromAcc).withdrawal(amount);
+            try{
+                Bank.getAccount(toAcc).deposit(amount);
+
+            }catch (IllegalArgumentException e){
+                System.out.println(e.getMessage());
+                System.out.println("Starting rollback process..");
+                //rollback
+                Bank.getAccount(fromAcc).deposit(amount);
+            }
             System.out.println("Transaction completed successfully!");
 
         } catch (IllegalArgumentException e) {
