@@ -7,6 +7,13 @@ public class Bank {
     private Bank() {
     }
 
+    /**
+     * Creates a new account of type Account and adds it to accounts HashMap. Uses generate
+     * generateAccountNumber to generate unique account number.
+     *
+     * @param name passes name argument to Account constructor.
+     * @return returns newly generated account number.
+     */
     static Long openAccount(String name) {
         Long account = generateAccountNumber();
         accounts.put(account, new Account(name, account));
@@ -18,7 +25,10 @@ public class Bank {
     static void printAccountInfo() {
         for (Account account : accounts.values()) {
             printRowDelimiterLine();
-            System.out.println("Account: " + account.getName() + " has a balance of: " + account.getBalance());
+            System.out.println("Account: "
+                    + account.getName()
+                    + " has a balance of: "
+                    + account.getBalance());
         }
     }
 
@@ -26,11 +36,26 @@ public class Bank {
         return ++accountCounter;
     }
 
+    /**
+     * @param accountNumber looks up accountNumber in the HashMap
+     * @return returns corresponding account object
+     */
     public static Account getAccount(Long accountNumber) {
-        return accounts.get(accountNumber);
+        if (accounts.get(accountNumber) == null) {
+            throw new IllegalArgumentException("No account found under no: " + accountNumber);
+        } else {
+
+            return accounts.get(accountNumber);
+        }
+
     }
 
-
+    /**
+     *
+     * @param fromAcc Long value account number to transfer from
+     * @param toAcc Long value account number to deposit to.
+     * @param amount amount to be transferred between accounts
+     */
     static void accountTransfer(Long fromAcc, Long toAcc, double amount) {
         printRowDelimiterLine();
         System.out.println("Starting transaction between accounts!");

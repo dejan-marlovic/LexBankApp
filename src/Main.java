@@ -13,7 +13,7 @@ public class Main {
 
         Bank.getAccount(account2).deposit(5533);
 
-        Bank.accountTransfer(account1, account2, -10);
+        Bank.accountTransfer(account1, account2, 67810);
 
         Bank.printAccountInfo();
 
