@@ -22,6 +22,10 @@ public class Bank {
         return accountCounter;
     }
 
+    /**
+     * Lists through HashMap account's values(account objects) and prints
+     * account name and current amount
+     */
     static void printAccountInfo() {
         for (Account account : accounts.values()) {
             printRowDelimiterLine();
@@ -32,6 +36,10 @@ public class Bank {
         }
     }
 
+    /**
+     * Generates unique account numbers by incrementing a static counter variable
+     * @return returns new (next) account number
+     */
     private static Long generateAccountNumber() {
         return ++accountCounter;
     }
@@ -71,6 +79,9 @@ public class Bank {
         printRowDelimiterLine();
     }
 
+    /**
+     * Prints delimiter for more readable console printouts.
+     */
     static void printRowDelimiterLine() {
         System.out.println("---------------------------------------------------------------------------------------------------------");
     }
