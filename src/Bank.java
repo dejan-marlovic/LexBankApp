@@ -50,7 +50,7 @@ public class Bank {
      */
     public static Account getAccount(Long accountNumber) {
         if (accounts.get(accountNumber) == null) {
-            throw new IllegalArgumentException("No account found under no: " + accountNumber);
+            throw new IllegalArgumentException("No account found under account number: " + accountNumber);
         } else {
 
             return accounts.get(accountNumber);
@@ -76,7 +76,9 @@ public class Bank {
                 System.out.println(e.getMessage());
                 System.out.println("Starting rollback process..");
                 //rollback
+                System.out.println("Rollback transaction:");
                 Bank.getAccount(fromAcc).deposit(amount);
+
             }
             System.out.println("Transaction completed successfully!");
 
